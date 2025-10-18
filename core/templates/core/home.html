@@ -5,25 +5,23 @@
 
 <!-- Hero -->
 <section class="relative">
-  <div class="h-[85vh] w-full bg-cover bg-center" style="background-image: url('{% static "hero.png" %}');"></div>
-  <div class="absolute inset-0 bg-black/20"></div>
-  <div class="absolute inset-x-0 bottom-20">
-    <div class="container mx-auto px-4">
-      <div class="max-w-xl">
-        <h1 class="text-white text-4xl sm:text-5xl font-semibold tracking-tight">Handpicked Luxury</h1>
-        <p class="text-white/90 mt-3">New season silhouettes, premium fabrics, timeless design.</p>
-        <a href="/catalog/" class="inline-block mt-6 bg-white text-black px-6 py-3 rounded-full text-sm font-medium hover:bg-neutral-100 transition">
-          SHOP NOW
-        </a>
+  <div class="h-[60vh] sm:h-[70vh] lg:h-[90vh] w-full bg-cover bg-center hero-parallax" style="background-image: url('{% static "hero.png" %}');"></div>
+  <div class="absolute inset-0 bg-black/25"></div>
+  <div class="absolute inset-0 flex items-end sm:items-center">
+    <div class="container mx-auto px-4 w-full pb-10 sm:pb-0">
+      <div class="max-w-2xl text-white">
+        <h1 class="hero-title text-3xl sm:text-5xl lg:text-6xl font-semibold tracking-tight">Timeless pieces, modern craft.</h1>
+        <p class="hero-sub mt-3 sm:mt-4 text-sm sm:text-base opacity-90">Discover the new Clothify capsule inspired by luxury houses.</p>
+        <a href="#intro" class="hero-cta mt-6 inline-block rounded-full bg-white text-black px-6 py-2 text-sm">Shop the collection</a>
       </div>
     </div>
   </div>
 </section>
 
 <!-- New arrivals -->
-<section class="container mx-auto px-4 mt-16">
+<section id="intro" class="container mx-auto px-4 mt-16" data-reveal>
   <h2 class="text-2xl font-semibold tracking-tight mb-6">New Arrivals</h2>
-  <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-6" data-reveal>
     {% for p in products %}
       <a href="/product/{{ p.slug }}/" class="group">
         <div class="aspect-[4/5] bg-neutral-100 rounded-xl overflow-hidden">
